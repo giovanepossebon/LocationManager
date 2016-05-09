@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LocationManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="y3b-2c-91h">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            </mapView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CLl-uH-oSp">
+                                <rect key="frame" x="20" y="28" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qtb-gu-94D">
+                                <rect key="frame" x="136" y="66" width="48" height="30"/>
+                                <state key="normal" title="Buscar"/>
+                                <connections>
+                                    <action selector="didTouchSearchAddress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5WX-hQ-6kj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEd-I3-XTy">
+                                <rect key="frame" x="118" y="104" width="84" height="30"/>
+                                <state key="normal" title="My Location"/>
+                                <connections>
+                                    <action selector="didTouchGetMyLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xsm-Nj-Nbs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="y3b-2c-91h" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="4Yx-1J-TSU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="y3b-2c-91h" secondAttribute="bottom" id="9OL-T6-ITv"/>
+                            <constraint firstItem="cEd-I3-XTy" firstAttribute="top" secondItem="Qtb-gu-94D" secondAttribute="bottom" constant="8" id="DMr-g5-Pmp"/>
+                            <constraint firstItem="Qtb-gu-94D" firstAttribute="top" secondItem="CLl-uH-oSp" secondAttribute="bottom" constant="8" id="E6p-cD-Dsc"/>
+                            <constraint firstItem="Qtb-gu-94D" firstAttribute="centerX" secondItem="CLl-uH-oSp" secondAttribute="centerX" id="Pfy-8a-syL"/>
+                            <constraint firstAttribute="trailing" secondItem="CLl-uH-oSp" secondAttribute="trailing" constant="20" id="Pp1-5b-cVx"/>
+                            <constraint firstItem="CLl-uH-oSp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Qmd-3g-hOg"/>
+                            <constraint firstItem="y3b-2c-91h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gnI-D1-XcR"/>
+                            <constraint firstAttribute="trailing" secondItem="y3b-2c-91h" secondAttribute="trailing" id="rAB-CZ-III"/>
+                            <constraint firstItem="cEd-I3-XTy" firstAttribute="centerX" secondItem="Qtb-gu-94D" secondAttribute="centerX" id="uh8-qQ-DlT"/>
+                            <constraint firstItem="CLl-uH-oSp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="vuN-Ni-9jh"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="mapView" destination="y3b-2c-91h" id="In2-Pf-n7D"/>
+                        <outlet property="textAddress" destination="CLl-uH-oSp" id="xAg-dX-MrA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="645" y="429"/>
+        </scene>
+    </scenes>
+</document>
